@@ -147,10 +147,10 @@ weightit2ps <- function(covs, treat, s.weights, subset, estimand, focal, stabili
     }
     covs <- apply(covs, 2, make.closer.to.1)
 
-    if (ncol(covs) > 1) {
-      colinear.covs.to.remove <- colnames(covs)[colnames(covs) %nin% colnames(make_full_rank(covs))]
-      covs <- covs[, colnames(covs) %nin% colinear.covs.to.remove, drop = FALSE]
-    }
+#    if (ncol(covs) > 1) {
+#      colinear.covs.to.remove <- colnames(covs)[colnames(covs) %nin% colnames(make_full_rank(covs))]
+#      covs <- covs[, colnames(covs) %nin% colinear.covs.to.remove, drop = FALSE]
+#    }
 
     if (is_null(A$link)) A$link <- "logit"
     else {
